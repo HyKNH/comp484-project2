@@ -1,48 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head> <!-- metadata -->
     <title>Your Giga Pet</title>
     <meta name="description" content="A cool thing made with Glitch">
     <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> <!-- script -->
+    <link rel="stylesheet" href="style.css"> <!-- css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1>
+      <h1> <!-- title -->
         This is your Giga Pet
       </h1>
     </header>
 
+    <audio id="button-sound" src="sounds/crit.mp3"></audio> <!-- sound effect -->
+    <audio id="bg-music" src="sounds/background.mp3" loop></audio>  <!-- background music -->
+
     <main>
-      <section class="pet-image-container">
-         <!-- Replace pet image with your own pet image -->
-        <img class="pet-image" src="https://cdn.glitch.com/3aa98e05-3216-497c-a251-210ae4713a83%2Fhound.jpg?1541715339220">
-      </section>
-      <section class="dashboard">
-        <div>Name: <strong><span class="name"></span></strong></div>
-        <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
-        <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
-        <div class="button-container">
-          <button class="treat-button">
-            Treat
-          </button>
-          <button class="play-button">
-            Play
-          </button>
-          <button class="exercise-button">
-            Exercise
-          </button>
+      <div class="pet-selection-popup"> <!-- popup -->
+        <h2>Choose your BattleCat</h2>
+        <div class="pet-images"> <!-- 4 pets -->
+          <img class="selectable-pet" data-index="0" src="images/cat.jpg">
+          <img class="selectable-pet" data-index="1" src="images/surfer.jpg">
+          <img class="selectable-pet" data-index="2" src="images/crazedCat.jpg">
+          <img class="selectable-pet" data-index="3" src="images/bear.jpg">
+          <img class="selectable-pet" data-index="4" src="images/angel.jpg">
+          <img class="selectable-pet" data-index="5" src="images/tank.jpg">
+          <img class="selectable-pet" data-index="6" src="images/togeluga.jpg">
+        </div>
+        <div> <!-- input name -->
+          <label for="pet-name">Enter your pet's name:</label>
+          <input type="text" id="pet-name" placeholder="My Pet">
+        </div>
+        <button id="finish-selection">Finish</button> <!-- submit button -->
+      </div>
+
+      <section class="dashboard" style="display:none;"> <!-- main dashboard for the pet -->
+        <div class="dashboard-container">
+          <div class="pet-section"> <!-- images -->
+            <div class="pet-image-container">
+              <img class="pet-image" src="">
+            </div>
+            <div> <!-- stats -->
+              <div>Name: <strong><span class="name"></span></strong></div>
+              <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
+              <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+              <div>Times Petted: <strong><span class="times"></span> times</strong></div>
+              <div class="button-container"> <!-- buttons for interacting with the pet -->
+                <button class="treat-button">Treat</button>
+                <button class="play-button">Play</button>
+                <button class="exercise-button">Exercise</button>
+                <button class="pet-button">Pet</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- comments -->
+          <div class="comment-area"></div>
         </div>
       </section>
     </main>
 
     <!-- Your web-app is https, so your scripts need to be too -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
   </body>
 </html>
